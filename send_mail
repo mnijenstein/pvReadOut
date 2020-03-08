@@ -1,0 +1,9 @@
+#!/bin/bash
+TEMP=$1
+SUBJECT="Zonnepanelen invertor te warm"
+ADDRESSES="m.nijenstein@gmail.com"
+
+$(echo -e "$(cat mail.body|sed -e s/TEMP/${TEMP}/g)" | mail -a "From: Martijn" -s "${SUBJECT}" ${ADDRESSES})
+
+echo "Mail sent"
+exit 0
